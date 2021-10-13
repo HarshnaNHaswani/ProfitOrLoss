@@ -1,11 +1,26 @@
+
+*{
+  place-content: center;
+  place-items: center;
+}
+
 .container{
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   border: 1px solid black;
   text-align: center;
+  height: 100vh;
 }
 
 input{
   padding: 0.5rem;
   margin: 1rem;
+  width: 50vw;
+}
+
+body{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: larger;
 }

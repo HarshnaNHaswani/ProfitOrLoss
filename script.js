@@ -32,13 +32,18 @@ function profitOrLoss(){
   else{
     if(sellingPrice > costPrice){ 
       res = profit(costPrice, sellingPrice, qty);
+      document.body.style.backgroundImage = 'url("profit.png")'
       divResult.style.color = 'green'
-      divResult.innerText = `You made a profit of ${res.val} with a profit percentage of ${res.percent}`      
+      divResult.innerText = `You made a profit of ${res.val} with a profit percentage of ${res.percent}%`      
     }
     else if(costPrice > sellingPrice){
       res = loss(costPrice, sellingPrice, qty);
-       divResult.style.color = 'red'
-      divResult.innerText = `You incurred a loss of ${res.val} with a loss percentage of ${res.percent}`;
+      if(res.percent <= 50){
+        document.body.style.backgroundColor = "#43103C";
+        document.body.style.color = "white";
+      }
+      divResult.style.color = 'red';
+      divResult.innerText = `You incurred a loss of ${res.val} with a loss percentage of ${res.percent}% 🥺🥺🥺`;
     }
     else {
       divResult.style.color = 'blue'
