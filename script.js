@@ -8,13 +8,13 @@ btnTellMe.addEventListener("click", profitOrLoss)
 
 function profit(costPrice, sellingPrice, qty){
   const profit = (sellingPrice - costPrice).toFixed(2) * qty;
-  const profitPercentage = ((profit / costPrice) * 100).toFixed(2);
+  const profitPercentage = ((profit /  (costPrice * qty)) * 100).toFixed(2);
   return {val: profit, percent: profitPercentage};
 }
 
 function loss(costPrice, sellingPrice, qty){
   const loss = (costPrice - sellingPrice).toFixed(2) * qty;
-  const lossPercentage = ((loss/ costPrice) * 100).toFixed(2) ;
+  const lossPercentage = ((loss/ (costPrice * qty)) * 100).toFixed(2) ;
   return {val: loss, percent: lossPercentage}
 }
 
